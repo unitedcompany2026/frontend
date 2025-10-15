@@ -26,6 +26,16 @@ export const Header = () => {
           </div>
           <span className="text-xl font-semibold text-gray-900">MIGx</span>
         </Link>
+
+        <Link to={ROUTES.CONTACT} className="flex items-center space-x-2">
+          <span className="text-xl font-semibold text-gray-900">Contact</span>
+        </Link>
+        <Link to={ROUTES.PARTNER} className="flex items-center space-x-2">
+          <span className="text-xl font-semibold text-gray-900">Partners</span>
+        </Link>
+        <Link to={ROUTES.PROPERTY} className="flex items-center space-x-2">
+          <span className="text-xl font-semibold text-gray-900">Property</span>
+        </Link>
         <div className="flex items-center gap-4">
           {isLoading ? (
             <div className="h-9 w-32 animate-pulse rounded-md bg-gray-200" />

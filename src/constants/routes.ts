@@ -4,4 +4,7 @@ export const ROUTES = {
   SIGNIN: '/signin',
   ADMIN: '/admin',
   UNAUTHORIZED: '/unauthorized',
+  CONTACT: '/contact',
+  PARTNER: '/partner',
+  PROPERTY: '/property',
 } as const

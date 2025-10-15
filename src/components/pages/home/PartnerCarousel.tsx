@@ -5,9 +5,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel'
-import { ArrowUpRight } from 'lucide-react'
+import PartnersCard from '../partners/PartnerCard'
 
-const CompanyCarousel = () => {
+const PartnersCarousel = () => {
   const companies = [
     {
       id: 1,
@@ -48,7 +48,7 @@ const CompanyCarousel = () => {
   ]
 
   return (
-    <div className="  py-16 px-0 sm:px-6 md:px-8 lg:px-20">
+    <div className="py-8 px-0 sm:px-6 md:px-8 lg:px-20">
       <div className="w-full">
         <div className="flex justify-between items-center px-4">
           <h1 className="text-xl sm:text-2xl font-bold text-gray-800">
@@ -65,29 +65,13 @@ const CompanyCarousel = () => {
           }}
           className="w-full"
         >
-          <CarouselContent className="md:-ml-3 md:mr-3 -ml-5 mr-5 my-7 ">
+          <CarouselContent className="md:-ml-3 md:mr-3 -ml-5 mr-5 my-7">
             {companies.map(company => (
               <CarouselItem
                 key={company.id}
-                className="pl-10 md:pl-6 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 "
+                className="pl-10 md:pl-6 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4"
               >
-                <div className="bg-white rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.06),0_2px_6px_rgba(0,0,0,0.04),inset_0_0_0_1px_rgba(0,0,0,0.03)] transition-all duration-300 h-full p-2">
-                  <div className="relative h-72 sm:h-72 overflow-hidden rounded-lg">
-                    <img
-                      src={company.image || '/placeholder.svg'}
-                      alt={company.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-2 sm:p-3 flex justify-between items-center">
-                    <h3 className="text-base sm:text-lg font-semibold text-gray-800 hover:text-blue-900 transition-colors cursor-pointer">
-                      {company.name}
-                    </h3>
-                    <div className="bg-gray-200 rounded-full p-2 hover:bg-blue-900 transition-colors cursor-pointer group/icon">
-                      <ArrowUpRight className="w-4 h-4 text-gray-700 group-hover/icon:text-white transition-colors" />
-                    </div>
-                  </div>
-                </div>
+                <PartnersCard company={company} />
               </CarouselItem>
             ))}
           </CarouselContent>
@@ -99,4 +83,4 @@ const CompanyCarousel = () => {
   )
 }
 
-export default CompanyCarousel
+export default PartnersCarousel

@@ -4,8 +4,11 @@ import { ROUTES } from '@/constants'
 import { LoadingScreen } from '@/components/shared/loaders'
 import { ProtectedRoutes } from './ProtectedRoutes'
 import Contact from '@/pages/Contact'
-import Partner from '@/pages/Partners'
 import Property from '@/pages/Property'
+import PartnerProjects from '@/pages/PartnerProjects'
+import Project from '@/pages/Project'
+import Partners from '@/pages/Partners'
+import AllProjects from '@/pages/AllProjects'
 
 const Home = lazy(() => import('@/pages/Home'))
 const Signin = lazy(() => import('@/pages/Signin'))
@@ -22,10 +25,12 @@ export const AppRoutes = () => {
         <Route path={ROUTES.SIGNUP} element={<Signup />} />
         <Route path={ROUTES.SIGNIN} element={<Signin />} />
         <Route path={ROUTES.CONTACT} element={<Contact />} />
-        <Route path={ROUTES.PARTNER} element={<Partner />} />
+        <Route path={ROUTES.PARTNERS} element={<Partners />} />
+        <Route path={ROUTES.PARTNER_PROJECTS} element={<PartnerProjects />} />
+        <Route path={ROUTES.PROJECT} element={<Project />} />
+        <Route path={ROUTES.ALL_PROJECTS} element={<AllProjects />} />
         <Route path={ROUTES.PROPERTY} element={<Property />} />
         <Route path={ROUTES.UNAUTHORIZED} element={<Unauthorized />} />
-
         <Route element={<ProtectedRoutes redirectTo={ROUTES.SIGNIN} />}></Route>
 
         <Route
@@ -38,8 +43,6 @@ export const AppRoutes = () => {
         >
           <Route path={ROUTES.ADMIN} element={<Admin />} />
         </Route>
-
-        {/* Catch-all for unknown routes */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>

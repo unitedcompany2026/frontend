@@ -12,38 +12,44 @@ const PartnersCarousel = () => {
     {
       id: 1,
       name: 'Metropol',
-      image:
-        'https://pmpymcjrhduyyrsk.public.blob.vercel-storage.com/Oval%20building-UPvH0loBnFxwOvZEw4FDNpQjZpYCtT.png',
+      images: [
+        'https://pmpymcjrhduyyrsk.public.blob.vercel-storage.com/Oval%20building-UPvH0loBnFxwOvZEw4FDNpQjZpYCtT.png'
+      ],
     },
     {
       id: 2,
       name: 'Alliance',
-      image:
-        'https://alliance.ge/static/media/YaZGZf4YZ5tfkFXU9ki2z2R2s50QgJExbTdSGhCn.png',
+      images: [
+        'https://alliance.ge/static/media/YaZGZf4YZ5tfkFXU9ki2z2R2s50QgJExbTdSGhCn.png'
+      ],
     },
     {
       id: 3,
       name: 'Orbi Group',
-      image:
-        'https://storage.googleapis.com/bd-ge-01/buildings-v2/2560x1920/34367.jpg',
+      images: [
+        'https://storage.googleapis.com/bd-ge-01/buildings-v2/2560x1920/34367.jpg'
+      ],
     },
     {
       id: 4,
       name: 'Next Group',
-      image:
-        'https://www.ldrgroup.nl/wp-content/uploads/2025/05/NEXT-Gardens-View-8.jpg',
+      images: [
+        'https://www.ldrgroup.nl/wp-content/uploads/2025/05/NEXT-Gardens-View-8.jpg'
+      ],
     },
     {
       id: 5,
       name: 'Premier Development',
-      image:
-        'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop',
+      images: [
+        'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop'
+      ],
     },
     {
       id: 6,
       name: 'Urban Construction Co',
-      image:
-        'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop',
+      images: [
+        'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop'
+      ],
     },
   ]
 

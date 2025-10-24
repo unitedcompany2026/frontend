@@ -5,6 +5,9 @@ export const ROUTES = {
   ADMIN: '/admin',
   UNAUTHORIZED: '/unauthorized',
   CONTACT: '/contact',
-  PARTNER: '/partner',
   PROPERTY: '/property',
+  PARTNERS: '/partners',
+  PARTNER_PROJECTS: '/partners/:projects',
+  PROJECT: '/partners/:projects/:id',
+  ALL_PROJECTS: '/all-projects',
 } as const

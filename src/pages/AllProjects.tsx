@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { MapPin, Building2, ArrowRight, Filter } from 'lucide-react'
+import { Building2, Filter } from 'lucide-react'
 import ProjectCard from '@/components/pages/partners/ProjectCard'
 
 interface Project {

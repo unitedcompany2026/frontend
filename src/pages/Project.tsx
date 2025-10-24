@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import {
   ChevronLeft,
   ChevronRight,
@@ -59,7 +59,6 @@ const LayoutCard = ({ layout }: { layout: any }) => {
 }
 
 export default function Project() {
-  const { id } = useParams()
   const navigate = useNavigate()
   const [currentImage, setCurrentImage] = useState(0)
   const [isFavorite, setIsFavorite] = useState(false)

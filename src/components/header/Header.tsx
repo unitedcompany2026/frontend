@@ -1,11 +1,10 @@
-import { Link, useNavigate } from 'react-router-dom'
-import { LogOut, UserPlus, LogIn } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { LogOut } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useCurrentUser, useSignOut } from '@/lib/hooks'
 import { ROUTES } from '@/constants'
 
 export const Header = () => {
-  const navigate = useNavigate()
   const { data: user, isLoading } = useCurrentUser()
   const signOut = useSignOut()
 

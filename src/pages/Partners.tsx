@@ -1,10 +1,6 @@
-import { useState } from 'react'
 import PartnerCard from '@/components/pages/partners/PartnerCard'
 
 export default function Partners() {
-  const [searchQuery, setSearchQuery] = useState('')
-  const [selectedCompany, setSelectedCompany] = useState('all')
-
   const companies = [
     {
       id: 1,
@@ -116,20 +112,6 @@ export default function Partners() {
     },
   ]
 
-  const filters = [
-    { id: 'all', label: 'All Partners' },
-    ...companies.map(company => ({ id: company.name, label: company.name })),
-  ]
-
-  const filteredCompanies = companies.filter(company => {
-    const matchesSearch = company.name
-      .toLowerCase()
-      .includes(searchQuery.toLowerCase())
-    const matchesFilter =
-      selectedCompany === 'all' || company.name === selectedCompany
-    return matchesSearch && matchesFilter
-  })
-
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 md:px-8 lg:px-20">
       <div className="max-w-7xl mx-auto">
@@ -140,8 +122,8 @@ export default function Partners() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredCompanies.length > 0 ? (
-            filteredCompanies.map(company => (
+          {companies.length > 0 ? (
+            companies.map(company => (
               <PartnerCard key={company.id} company={company} />
             ))
           ) : (

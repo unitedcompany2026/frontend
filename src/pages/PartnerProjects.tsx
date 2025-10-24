@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { MapPin, Building2, ArrowRight } from 'lucide-react'
+import { Building2 } from 'lucide-react'
+import ProjectCard from '@/components/pages/partners/ProjectCard'
 
 interface Project {
   id: number
@@ -11,12 +12,7 @@ interface Project {
   images: string[]
 }
 
-interface PartnerProjects {
-  [key: string]: Project[]
-}
-
-// Mock data - in real app this would come from routing/API
-const partnerProjects: PartnerProjects = {
+const partnerProjects: Record<string, Project[]> = {
   'Orbi Group': [
     {
       id: 1,
@@ -122,57 +118,12 @@ const partnerProjects: PartnerProjects = {
   ],
 }
 
-// Simple ProjectCard component for demo
-function ProjectCard({ project }: { project: Project }) {
-  return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-      <div className="relative h-48 bg-gray-200">
-        <img
-          src={project.images[0]}
-          alt={project.name}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute top-3 right-3">
-          <span
-            className={`px-3 py-1 rounded-full text-xs font-semibold ${
-              project.status === 'Completed'
-                ? 'bg-green-100 text-green-800'
-                : project.status === 'Under Construction'
-                  ? 'bg-blue-100 text-blue-800'
-                  : 'bg-yellow-100 text-yellow-800'
-            }`}
-          >
-            {project.status}
-          </span>
-        </div>
-      </div>
-      <div className="p-4">
-        <h3 className="text-lg font-semibold text-gray-800 mb-2">
-          {project.name}
-        </h3>
-        <div className="flex items-center text-sm text-gray-600 mb-3">
-          <MapPin className="w-4 h-4 mr-1" />
-          {project.location}
-        </div>
-        <div className="flex items-center justify-between text-sm mb-4">
-          <span className="text-gray-500">{project.type}</span>
-          <span className="text-gray-500">{project.year}</span>
-        </div>
-        <button className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 font-medium">
-          View Details
-          <ArrowRight className="w-4 h-4" />
-        </button>
-      </div>
-    </div>
-  )
-}
-
 export default function PartnerProjects() {
-  const [selectedPartner, setSelectedPartner] = useState('Orbi Group')
-  const [selectedCity, setSelectedCity] = useState<string>('All')
+  const [selectedPartner] = useState('Orbi Group')
+  const [selectedCity, setSelectedCity] = useState('All')
+
   const projects = partnerProjects[selectedPartner] || []
 
-  // Extract unique cities from projects
   const cities = [
     'All',
     ...Array.from(
@@ -185,7 +136,6 @@ export default function PartnerProjects() {
     ),
   ]
 
-  // Filter projects by city
   const filteredProjects =
     selectedCity === 'All'
       ? projects
@@ -202,7 +152,7 @@ export default function PartnerProjects() {
             Browse through all construction projects
           </p>
 
-          {/* City Filter Buttons */}
+          {/* City Filter */}
           <div className="flex flex-wrap gap-2">
             {cities.map(city => (
               <button
